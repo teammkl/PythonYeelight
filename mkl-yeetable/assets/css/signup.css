@@ -1,0 +1,95 @@
+html {
+    height: 150%;
+    -webkit-background-size:cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background: white;  /* fallback for old browsers */
+    background-repeat: no-repeat;
+    background: -webkit-linear-gradient(#ffffff, #c1c1c1);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(#ffffff, #c1c1c1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#logo {
+  padding-top: 10px;
+  width: 400px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form{
+  position: absolute;
+  top: 550px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-family: 'Times New Roman', serif;
+  border: 1px solid white;
+  width: 500px;
+  color: #494949;
+  padding: 40px;
+}
+
+h3 {
+    font-family: 'Julius Sans One', serif;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #494949;
+    text-align: center;
+    font-size: 30px;
+    padding: 0 0 40px;
+}
+
+
+.form p{
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 1px;
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+  color: #494949;
+}
+
+.form input, select{
+    margin-bottom: 20px;
+    width:100%;
+}
+
+.form input[type=text],
+.form input[type=password]{
+  font-family: 'Times New Roman', serif;
+  letter-spacing: 1px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: transparent;
+  outline: none;
+  height: 40px;
+  color: #494949;
+}
+
+.form input[type=submit]{
+  margin-top: 30px;
+  height: 30px;
+  outline: none;
+  color: #494949;
+  font-size: 15px;
+  background: transparent;
+  border: 1px solid white;
+  letter-spacing: 2px;
+}
+
+.form input[type=submit]:hover,
+.form input[type=submit]:active
+{
+  background:rgba(0, 0, 0, 0.1);
+  color: #494949;
+}
+
+.form a{
+  color:#494949;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: bold;
+  align-self: center;
+
+}

@@ -1,0 +1,24 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+    <meta charset="utf-8">
+    <title>MKL YEETABLE</title>
+        <link rel="stylesheet" href="{% static '/css/index.css' %}">
+        <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+    </head>
+    <body>
+    <form method="get" action="login.html"><a href="{% url 'users:login' %}" class="button">Sign In</a></form><form method="get" action="signup.html"><a href="{% url 'users:signup' %}" class="button">Sign Up</a></form>
+    <img src="{% static '/images/logo.png' width=100 %}" id="logo"/>
+    <h1>Welcome</h1>
+
+    <body>
+    <form method="GET">
+      <input type="submit" class="btn" value="Connect" name="connect"/>
+      <input type="submit" class="btn" value="Turn On" name="turnon">
+      <input type="submit" class="btn" value="Turn Off" name="turnoff">
+    </form>
+
+    </body>
+</html>
