@@ -9,29 +9,24 @@
       <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     </head>
     <body>
-
+    <img src="{% static '/images/logo.png' %}" id="logo"/>
         <div class="header">
             <div class="nav">
                 <ul class="menu-bar">
-                    <li><a href="login"><i class="fa fa-chevron-left"></i></a></li>
-                    <li><h1>Welcome back!</h1></li>
+                  <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
+                  <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
                 </ul>
             </div>
         </div>
 
         <div class="content">
-            <a href="/lightthemes/">
-                <div class="square-button"><img id="light" src="{% static '/images/lightscene.png' width=100 %}" /><br><p>Light Theme</p></div>
-            </a>
-            <a href="sound">
-                <div class="square-button"><img id="light" src="{% static '/images/sound.png' width=100 %}" /><br><p>Sound</p></div>
-            </a>
-            <a href="timer">
-                <div class="square-button"><img id="light" src="{% static '/images/clock.png' width=100 %}" /><br><p>Timer</p></div>
-            </a>
-            <a href="addDevice">
-                <div class="square-button"><i class="fa fa-plus-circle"></i><br><p>Add Device</p></div>
-            </a>
+          <form method="GET">
+            <input type="submit" class="btn" value="Connect" name="connect"/>
+            <input type="submit" class="btn" value="Turn On" name="turnon">
+            <input type="submit" class="btn" value="Turn Off" name="turnoff">
+            <input type="submit" class="btn" value="Dimming" name="dimming">
+            <input type="submit" class="btn" value="Color" name="color">
+          </form>
         </div>
 
     </body>
