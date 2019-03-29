@@ -5,8 +5,9 @@
     <head>
     <meta charset="utf-8">
     <title>MKL YEETABLE</title>
-        <link rel="stylesheet" href="{% static '/css/userhome.css' %}">
+      <link rel="stylesheet" href="{% static '/css/userhome.css' %}">
       <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+      <link rel="shortcut icon" href="">
     </head>
     <body>
     <img src="{% static '/images/logo.png' %}" id="logo"/>
@@ -21,15 +22,13 @@
 
         <div class="content">
 
-          <div type="submit" class="restaurants">
-            <img id="restBtn" src="{% static '/images/starbucks.png' %}" />
-            <img id="restBtn" src="{% static '/images/lecrepecafe.png' %}" />
-            <img id="restBtn" src="{% static '/images/jamba.png' %}" />
-            <img id="restBtn" src="{% static '/images/panda.png' %}" />
-          </div>
-
           <form method="GET">
-            <input type="submit" class="btn" value="Connect" name="connect"/>
+            <input type="image" id="restBtn" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe">
+            <input type="image" id="restBtn" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks">
+            <input type="image" id="restBtn" src="{% static '/images/jamba.png' %}">
+            <input type="image" id="restBtn" src="{% static '/images/panda.png' %}">
+            <BR>
+            <input type="submit" class="btn" name="connect"/>
             <input type="submit" class="btn" value="Turn On" name="turnon">
             <input type="submit" class="btn" value="Turn Off" name="turnoff">
             <input type="submit" class="btn" value="Dimming" name="dimming">

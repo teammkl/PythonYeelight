@@ -37,6 +37,16 @@ def user_homepage(request):
         print(request.GET.get('color'))
         print("Setting Color")
         bulb.set_color_temp(2000)
+    elif request.GET.get('lecrepecafe'):
+        print(request.GET.get('lecrepecafe'))
+        print("Clicked Le Crepe Cafe")
+        bulb.turn_on()
+        bulb.set_color_temp(6500)
+    elif request.GET.get('starbucks'):
+        print(request.GET.get('starbucks'))
+        print("Clicked Starbucks")
+        bulb.turn_on()
+        bulb.set_color_temp(1500)
     return render(request, 'users/userhome.html')
 
 def login_view(request):
