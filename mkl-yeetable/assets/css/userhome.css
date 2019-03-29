@@ -17,23 +17,35 @@ html {
   margin-right: auto;
 }
 
-#restBtn{
+.restBtn{
   width: 100px;
   padding: 20px;
 }
 
 .nav .menu-bar {
+    background-color: powderblue;
+    color: white;
+    font-weight: bold;
     text-align: center;
+    height: cover;
+    margin-left: -20px;
+    margin-right: -20px;
+    box-shadow: none;
+    border: none;
 }
 
 .menu-bar li {
+    font-family: 'Julius Sans One', serif;
     list-style-type: none;
     display: inline-block;
-    margin: -15px 130px;
+    padding: 20px;
     font-size: 20px;
-    color: white;
-    margin-left: -30px;
-    margin-top: 50px;
+    color: white
+}
+
+.menu-bar li:hover, .menu-bar li:active {
+  color: black;
+  background:rgba(0, 0, 0, 0.1);
 }
 
 .content{
