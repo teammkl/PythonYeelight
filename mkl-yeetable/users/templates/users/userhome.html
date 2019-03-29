@@ -22,13 +22,20 @@
 
         <div class="content">
 
+          <!--<div type="submit" class="restaurants">-->
+            <!--<img id="lecrepecafe" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe" class="restBtn" />-->
+            <!--<img type="image" id="starbucks" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks" class="restBtn" />-->
+            <!--<img type="image" id="jamba" src="{% static '/images/jamba.png' %}" value="jamba" name="jamba" class="restBtn" />-->
+            <!--<img type="image" id="panda" src="{% static '/images/panda.png' %}" value="panda" name="panda" class="restBtn" />-->
+          <!--</div>-->
+
           <form method="GET">
-            <input type="image" id="restBtn" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe">
-            <input type="image" id="restBtn" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks">
-            <input type="image" id="restBtn" src="{% static '/images/jamba.png' %}">
-            <input type="image" id="restBtn" src="{% static '/images/panda.png' %}">
+            <input type="image" id="lecrepecafe" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe" class="restBtn">
+            <input type="image" id="starbucks" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks" class="restBtn">
+            <input type="image" id="jamba" src="{% static '/images/jamba.png' %}" value="jamba" name="jamba" class="restBtn">
+            <input type="image" id="panda" src="{% static '/images/panda.png' %}" value="panda" name="panda" class="restBtn">
             <BR>
-            <input type="submit" class="btn" name="connect"/>
+            <input type="submit" class="btn" value="Connect" name="connect"/>
             <input type="submit" class="btn" value="Turn On" name="turnon">
             <input type="submit" class="btn" value="Turn Off" name="turnoff">
             <input type="submit" class="btn" value="Dimming" name="dimming">

@@ -16,7 +16,7 @@ def signup_view(request):
     return render(request, 'users/signup.html', { 'form': form })
 
 def user_homepage(request):
-    bulb = Bulb("10.3.3.144")
+    bulb = Bulb("10.3.3.127")
     if request.GET.get('connect'):
         print(request.GET.get('connect'))
         print("Discovering")
@@ -41,12 +41,25 @@ def user_homepage(request):
         print(request.GET.get('lecrepecafe'))
         print("Clicked Le Crepe Cafe")
         bulb.turn_on()
-        bulb.set_color_temp(6500)
+        bulb.set_color_temp(1700)
     elif request.GET.get('starbucks'):
         print(request.GET.get('starbucks'))
         print("Clicked Starbucks")
         bulb.turn_on()
-        bulb.set_color_temp(1500)
+        bulb.set_color_temp(6500)
+    elif request.GET.get('jamba'):
+        print(request.GET.get('jamba'))
+        print("Clicked Jamba")
+        bulb.turn_on()
+        bulb.set_color_temp(6500)
+    elif request.GET.get('panda'):
+        print(request.GET.get('panda'))
+        print("Clicked Panda")
+        bulb.turn_on()
+        bulb.set_color_temp(1700)
+    else:
+        print(request.GET.get('turnoff'))
+        print("NO REQUEST")
     return render(request, 'users/userhome.html')
 
 def login_view(request):
