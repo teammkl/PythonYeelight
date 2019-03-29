@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^users/', include('users.urls')),
     path('about/', views.about),
-    re_path(r'^lightthemes/', include('lightthemes.urls')),
+    re_path(r'^test/', include('test.urls')),
     path('', views.index),
 ]
 

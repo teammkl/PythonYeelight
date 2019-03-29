@@ -2,17 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="edd3ee8d-ed48-4248-afba-af569aef1501" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/templates/test/test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/jamba.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/lecrepecafe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/panda.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/starbucks.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/templates/lightthemes/lighttheme_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lightthemes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/userhome.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/userhome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/Design.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/clock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/fire2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/img3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/lightscene.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/rain2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/sound.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/sun3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/templates/users/userhome.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/users/userhome.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,34 +36,34 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="cgi" value="2" />
-          <entry key="css" value="15" />
-          <entry key="html" value="84" />
-          <entry key="py" value="266" />
+          <entry key="css" value="84" />
+          <entry key="html" value="163" />
+          <entry key="py" value="278" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="15" />
-          <entry key="HTML" value="84" />
+          <entry key="CSS" value="84" />
+          <entry key="HTML" value="163" />
           <entry key="Perl5 script" value="2" />
-          <entry key="Python" value="266" />
+          <entry key="Python" value="278" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="cgi" value="2" />
-          <entry key="css" value="2" />
-          <entry key="html" value="4" />
-          <entry key="py" value="22" />
+          <entry key="css" value="4" />
+          <entry key="html" value="5" />
+          <entry key="py" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="2" />
-          <entry key="HTML" value="4" />
+          <entry key="CSS" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Perl5 script" value="1" />
-          <entry key="Python" value="22" />
+          <entry key="Python" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -70,13 +78,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/views.py">
+        <entry file="file://$PROJECT_DIR$/users/templates/users/userhome.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="310">
+              <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/css/userhome.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -90,6 +104,14 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>lightthemes</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -106,15 +128,15 @@
         <option value="$PROJECT_DIR$/light.py" />
         <option value="$PROJECT_DIR$/templates/light.py" />
         <option value="$PROJECT_DIR$/assets/css/index.css" />
-        <option value="$PROJECT_DIR$/assets/css/userhome.css" />
         <option value="$PROJECT_DIR$/templates/index.html" />
-        <option value="$PROJECT_DIR$/users/templates/users/userhome.html" />
         <option value="$PROJECT_DIR$/mklyeetable/views.py" />
         <option value="$PROJECT_DIR$/users/views.py" />
         <option value="$PROJECT_DIR$/lightthemes/templates/lightthemes/lighttheme_list.html" />
         <option value="$PROJECT_DIR$/test/apps.py" />
         <option value="$PROJECT_DIR$/test/urls.py" />
         <option value="$PROJECT_DIR$/test/views.py" />
+        <option value="$PROJECT_DIR$/assets/css/userhome.css" />
+        <option value="$PROJECT_DIR$/users/templates/users/userhome.html" />
       </list>
     </option>
   </component>
@@ -125,9 +147,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="13" />
-    <option name="y" value="32" />
-    <option name="width" value="1061" />
+    <option name="x" value="5" />
+    <option name="y" value="30" />
+    <option name="width" value="977" />
     <option name="height" value="730" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -146,13 +168,19 @@
             <path>
               <item name="mkl-yeetable" type="b2602c69:ProjectViewProjectNode" />
               <item name="mkl-yeetable" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mkl-yeetable" type="b2602c69:ProjectViewProjectNode" />
               <item name="mkl-yeetable" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mkl-yeetable" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mkl-yeetable" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -167,10 +195,14 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="PERL5_MAIN_SETTINGS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/assets" />
@@ -224,10 +256,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="13" y="32" width="1061" height="730" extended-state="0" />
+    <frame x="5" y="30" width="977" height="730" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2708538" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29518718" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Learn" order="3" />
@@ -240,7 +272,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32972136" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.20219436" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.1724138" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -254,6 +286,17 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/test/views.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/mklyeetable/hello_get.py" />
@@ -276,13 +319,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/userhome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
@@ -294,13 +330,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="16" selection-start-line="16" selection-end-line="22" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/templates/users/userhome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -356,11 +385,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="32" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
+        <state relative-caret-position="30">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/lightsetting.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/userhome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/templates/users/userhome.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="25" column="66" selection-start-line="25" selection-start-column="66" selection-end-line="25" selection-end-column="66" />
         </state>
       </provider>
     </entry>

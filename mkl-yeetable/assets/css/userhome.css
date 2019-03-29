@@ -17,6 +17,10 @@ html {
   margin-right: auto;
 }
 
+#restBtn{
+  width: 100px;
+  padding: 20px;
+}
 
 .nav .menu-bar {
     text-align: center;
