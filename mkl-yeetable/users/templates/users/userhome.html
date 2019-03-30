@@ -20,13 +20,23 @@
             </div>
         </div>
 
+    <div>
+      <p style = "text-align: center; font-family: 'Arial Black'; font-size: larger">The current time is: <span id="datetime"></span></p>
+
+      <script>
+        const dt = new Date();
+        document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+      </script>
+    </div>
+
+
         <div class="content">
 
           <form method="GET">
             <input type="image" id="restBtn" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe">
             <input type="image" id="restBtn" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks">
-            <input type="image" id="restBtn" src="{% static '/images/jamba.png' %}">
-            <input type="image" id="restBtn" src="{% static '/images/panda.png' %}">
+            <input type="image" id="restBtn" src="{% static '/images/jamba.png' %}" value="jamba" name="jamba">
+            <input type="image" id="restBtn" src="{% static '/images/panda.png' %}" value="panda" name="panda">
             <BR>
             <input type="submit" class="btn" name="connect"/>
             <input type="submit" class="btn" value="Turn On" name="turnon">

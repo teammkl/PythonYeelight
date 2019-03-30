@@ -32,7 +32,7 @@ def user_homepage(request):
     elif request.GET.get('dimming'):
         print(request.GET.get('dimming'))
         print("Dimming")
-        bulb.set_brightness(1)
+        bulb.set_brightness(100)
     elif request.GET.get('color'):
         print(request.GET.get('color'))
         print("Setting Color")
@@ -47,6 +47,16 @@ def user_homepage(request):
         print("Clicked Starbucks")
         bulb.turn_on()
         bulb.set_color_temp(1500)
+    elif request.GET.get('jamba'):
+        print(request.GET.get('jamba'))
+        print("Clicked Jamba")
+        bulb.turn_on()
+        bulb.set_color_temp(1500)
+    elif request.GET.get('panda'):
+        print(request.GET.get('panda'))
+        print("Clicked Panda")
+        bulb.turn_on()
+        bulb.set_color_temp(6500)
     return render(request, 'users/userhome.html')
 
 def login_view(request):
