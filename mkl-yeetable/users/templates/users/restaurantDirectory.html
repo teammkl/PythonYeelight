@@ -1,4 +1,5 @@
 <!--{% load static %}-->
+<!--from users.models import Restaurant-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -24,53 +25,56 @@
   </div>
 </div>
 <div>
-<div class="content">
-  <div class="wrap">
-    <div class="ui search">
-      <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Search restaurants...">
-        <i class="search icon"></i>
+  <div class="content">
+    <div class="wrap">
+      <div class="ui search">
+        <div class="ui icon input">
+          <input class="prompt" type="text" placeholder="Search restaurants...">
+          <i class="search icon"></i>
+        </div>
+        <div class="results"></div>
       </div>
-      <div class="results"></div>
+    </div>
+    <div>
+      <ol id="dynamic_list"></ol>
     </div>
   </div>
-</div>
 </div>
 </body>
 </html>
 
+
 <script>
-  var content = [
-    { title: 'Andorra' },
-    { title: 'United Arab Emirates' },
-    { title: 'Afghanistan' },
-    { title: 'Antigua' },
-    { title: 'Anguilla' },
-    { title: 'Albania' },
-    { title: 'Armenia' },
-    { title: 'Netherlands Antilles' },
-    { title: 'Angola' },
-    { title: 'Argentina' },
-    { title: 'American Samoa' },
-    { title: 'Austria' },
-    { title: 'Australia' },
-    { title: 'Aruba' },
-    { title: 'Aland Islands' },
-    { title: 'Azerbaijan' },
-    { title: 'Bosnia' },
-    { title: 'Barbados' },
-    { title: 'Bangladesh' },
-    { title: 'Belgium' },
-    { title: 'Burkina Faso' },
-    { title: 'Bulgaria' },
-    { title: 'Bahrain' },
-    { title: 'Burundi' }
-    // etc
-  ];
-$('.ui.search')
-.search({
-source: content
-})
-;
+  const content = [];
+  for (let i = 0; i < 25; i++) {
+      content[i] = { title: "Restaurant #" + i };
+  }
+
+  const db = openDatabase('users_restaurant', '1.0', 'users_restaurant db', 2 * 1024 * 1024);
+  // db.transaction(function (tx) {
+  //   return tx.executeSql('SELECT name from users_restaurant');
+  // });
+  // function addItem(i){
+  //   const ul = document.getElementById("dynamic_list");
+  //   const x = db.transaction(function (tx) {
+  //     return tx.executeSql('SELECT name from users_restaurant WHERE id=' + i);
+  //   });
+  //   const li = document.createElement("li");
+  //   li.setAttribute('id',x.id);
+  //   li.appendChild(document.createTextNode(x.name));
+  //   ul.appendChild(li);
+  // }
+  // for (let i = 0; i < 2; i++) {
+  //   content[i] = { title: addItem(i) };
+  // }
+  for (let i = 0; i < 2; i++) {
+    content[i] = { title: db };
+  }
+
+  $('.ui.search')
+      .search({
+        source: content
+      })
+  ;
 </script>
 
