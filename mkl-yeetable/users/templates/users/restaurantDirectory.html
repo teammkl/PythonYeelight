@@ -1,0 +1,76 @@
+<!--{% load static %}-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Directory</title>
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+  <link rel="stylesheet" href="{% static '/css/restaurantDirectory.css' %}">
+</head>
+<body>
+<img src="{% static '/images/logo.png' %}" id="logo"/>
+<div class="header">
+  <div class="nav">
+    <ul class="menu-bar">
+      <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
+      <li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>
+      <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
+    </ul>
+  </div>
+</div>
+<div>
+<div class="content">
+  <div class="wrap">
+    <div class="ui search">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search restaurants...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+<script>
+  var content = [
+    { title: 'Andorra' },
+    { title: 'United Arab Emirates' },
+    { title: 'Afghanistan' },
+    { title: 'Antigua' },
+    { title: 'Anguilla' },
+    { title: 'Albania' },
+    { title: 'Armenia' },
+    { title: 'Netherlands Antilles' },
+    { title: 'Angola' },
+    { title: 'Argentina' },
+    { title: 'American Samoa' },
+    { title: 'Austria' },
+    { title: 'Australia' },
+    { title: 'Aruba' },
+    { title: 'Aland Islands' },
+    { title: 'Azerbaijan' },
+    { title: 'Bosnia' },
+    { title: 'Barbados' },
+    { title: 'Bangladesh' },
+    { title: 'Belgium' },
+    { title: 'Burkina Faso' },
+    { title: 'Bulgaria' },
+    { title: 'Bahrain' },
+    { title: 'Burundi' }
+    // etc
+  ];
+$('.ui.search')
+.search({
+source: content
+})
+;
+</script>
+

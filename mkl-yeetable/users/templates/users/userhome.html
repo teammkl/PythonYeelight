@@ -15,6 +15,7 @@
             <div class="nav">
                 <ul class="menu-bar">
                   <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
+                  <li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>
                   <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
                 </ul>
             </div>
@@ -29,7 +30,7 @@
             <!--<img type="image" id="panda" src="{% static '/images/panda.png' %}" value="panda" name="panda" class="restBtn" />-->
           <!--</div>-->
 
-          <form method="GET">
+          <form method="POST">
             <input type="image" id="lecrepecafe" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe" class="restBtn">
             <input type="image" id="starbucks" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks" class="restBtn">
             <input type="image" id="jamba" src="{% static '/images/jamba.png' %}" value="jamba" name="jamba" class="restBtn">

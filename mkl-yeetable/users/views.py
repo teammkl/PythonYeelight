@@ -71,3 +71,6 @@ def login_view(request):
     else:
         form = AuthenticationForm()
     return render(request, 'users/login.html', { 'form': form })
+
+def restaurant_directory(request):
+    return render(request, 'users/restaurantDirectory.html')
