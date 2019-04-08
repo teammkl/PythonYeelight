@@ -124,3 +124,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'assets'),
 )
+
+FIXTURE_DIRS = (
+    'mkl-yeetable/users/fixtures/sample_model_data.json',
+)
