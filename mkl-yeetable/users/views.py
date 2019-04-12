@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from yeelight import Bulb
 from yeelight import discover_bulbs
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def signup_view(request):
@@ -15,8 +16,12 @@ def signup_view(request):
         form = UserCreationForm()
     return render(request, 'users/signup.html', { 'form': form })
 
+
+# noinspection PyInterpreter
+@csrf_exempt
 def user_homepage(request):
-    bulb = Bulb("10.3.3.127")
+    bulb = Bulb("192.168.1.134")
+    # noinspection PyInterpreter,PyInterpreter
     if request.GET.get('connect'):
         print(request.GET.get('connect'))
         print("Discovering")
@@ -36,12 +41,12 @@ def user_homepage(request):
     elif request.GET.get('color'):
         print(request.GET.get('color'))
         print("Setting Color")
-        bulb.set_color_temp(2000)
+        bulb.set_color_temp(2700)
     elif request.GET.get('lecrepecafe'):
         print(request.GET.get('lecrepecafe'))
         print("Clicked Le Crepe Cafe")
         bulb.turn_on()
-        bulb.set_color_temp(1700)
+        bulb.set_color_temp(2700)
     elif request.GET.get('starbucks'):
         print(request.GET.get('starbucks'))
         print("Clicked Starbucks")
@@ -56,7 +61,7 @@ def user_homepage(request):
         print(request.GET.get('panda'))
         print("Clicked Panda")
         bulb.turn_on()
-        bulb.set_color_temp(1700)
+        bulb.set_color_temp(2700)
     else:
         print(request.GET.get('turnoff'))
         print("NO REQUEST")
