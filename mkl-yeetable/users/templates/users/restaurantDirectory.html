@@ -1,6 +1,3 @@
-<!--{% load static %}-->
-<!--from users.models import Restaurant-->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,30 +42,11 @@
 
 
 <script>
-  const content = [];
-  for (let i = 0; i < 25; i++) {
-      content[i] = { title: "Restaurant #" + i };
-  }
 
-  const db = openDatabase('users_restaurant', '1.0', 'users_restaurant db', 2 * 1024 * 1024);
-  // db.transaction(function (tx) {
-  //   return tx.executeSql('SELECT name from users_restaurant');
-  // });
-  // function addItem(i){
-  //   const ul = document.getElementById("dynamic_list");
-  //   const x = db.transaction(function (tx) {
-  //     return tx.executeSql('SELECT name from users_restaurant WHERE id=' + i);
-  //   });
-  //   const li = document.createElement("li");
-  //   li.setAttribute('id',x.id);
-  //   li.appendChild(document.createTextNode(x.name));
-  //   ul.appendChild(li);
-  // }
-  // for (let i = 0; i < 2; i++) {
-  //   content[i] = { title: addItem(i) };
-  // }
-  for (let i = 0; i < 2; i++) {
-    content[i] = { title: db };
+  const data = ["Emerald Chinese Restaurant", "Musashi Japanese Restaurant", "Taco Bell", "Marco's Pizza", "Marathon Diner", "McDonald's", "Zippy's", "Ruby Tuesdays", "Sushi Bay", "Genki Ramen"];
+  const content = [];
+  for (let i = 0; i < data.length; i++) {
+    content[i] = { title: data[i] };
   }
 
   $('.ui.search')
