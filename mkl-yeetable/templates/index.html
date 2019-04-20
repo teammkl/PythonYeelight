@@ -9,17 +9,32 @@
         <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
     </head>
     <body>
-    <form method="get" action="login.html"><a href="{% url 'users:login' %}" class="button">Sign In</a></form><form method="get" action="signup.html"><a href="{% url 'users:signup' %}" class="button">Sign Up</a></form>
     <img src="{% static '/images/logo.png' width=100 %}" id="logo"/>
+
+    <form method="get" action="signup.html"><a href="{% url 'users:signup' %}" class="button">Sign Up</a></form>
+    <form method="get" action="login.html"><a href="{% url 'users:login' %}" class="button">Sign In</a></form>
+
     <h1>Welcome</h1>
 
-    <body>
-    <form method="GET">
-      <input type="submit" class="btn" value="Connect" name="connect"/>
-      <input type="submit" class="btn" value="Turn On" name="turnon">
-      <input type="submit" class="btn" value="Turn Off" name="turnoff">
-      <input type="submit" class="btn" value="Dimming" name="dimming">
-      <input type="submit" class="btn" value="Color" name="color">
-    </form>
+
+
+    <div class="row">
+        <div class="column left" style="background-color: powderblue;">
+            <h2>Headquarters:</h2>
+            <p>POST 318-B</p>
+        </div>
+
+        <div class="column middle" style="background-color: powderblue;">
+            <h2>Github:</h2>
+            <p>github.com/teammkl</p>
+        </div>
+        <div class="column right" style="background-color: powderblue;">
+            <h2>Column 3</h2>
+            <p>Email us @: yeetable@gmail.com</p>
+            <p>Contact us: 1-808-420-9325</p>
+        </div>
+    </div>
     </body>
+    </html>
+
 </html>

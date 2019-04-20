@@ -33,6 +33,17 @@ h1 {
   background:rgba(0, 0, 0, 0.1);
 }
 
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 10px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 #logo {
     padding-top: 25px;
@@ -41,3 +52,4 @@ h1 {
     margin-left: auto;
     margin-right: auto;
 }
+
