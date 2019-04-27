@@ -1,68 +1,123 @@
-{% load static from staticfiles %}
+<!--{% load static from staticfiles %}-->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-    <meta charset="utf-8">
-    <title>MKL YEETABLE</title>
-      <link rel="stylesheet" href="{% static '/css/userhome.css' %}">
-      <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
-      <link rel="shortcut icon" href="">
-    </head>
-    <body>
-    <img src="{% static '/images/logo.png' %}" id="logo"/>
-        <div class="header">
-            <div class="nav">
-                <ul class="menu-bar">
-                  <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
-                  <li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>
-                  <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
-                </ul>
-            </div>
-        </div>
+<head>
+  <meta charset="UTF-8">
+  <title>MKL YEETABLE</title>
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript"
+          src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="{% static '/css/userhome2.css' %}">
+</head>
+<body>
+<img src="{% static '/images/logo.png' %}" id="logo"/>
+<div class="header">
+  <div class="nav">
+    <ul class="menu-bar">
+      <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
+      <!--<li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>-->
+      <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
+    </ul>
+  </div>
+</div>
 
-        <div class="content">
-
-          <!--<div type="submit" class="restaurants">-->
-            <!--<img id="lecrepecafe" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe" class="restBtn" />-->
-            <!--<img type="image" id="starbucks" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks" class="restBtn" />-->
-            <!--<img type="image" id="jamba" src="{% static '/images/jamba.png' %}" value="jamba" name="jamba" class="restBtn" />-->
-            <!--<img type="image" id="panda" src="{% static '/images/panda.png' %}" value="panda" name="panda" class="restBtn" />-->
-          <!--</div>-->
-
-          <form method= "GET">
-            <input type="image" id="lecrepecafe" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe" name="lecrepecafe" class="restBtn">
-            <input type="image" id="starbucks" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks" class="restBtn">
-            <input type="image" id="jamba" src="{% static '/images/jamba.png' %}" value="jamba" name="jamba" class="restBtn">
-            <input type="image" id="panda" src="{% static '/images/panda.png' %}" value="panda" name="panda" class="restBtn">
-            <BR>
-            <input type="submit" class="btn" value="Connect" name="connect"/>
-            <input type="submit" class="btn" value="Turn On" name="turnon">
-            <input type="submit" class="btn" value="Turn Off" name="turnoff">
-            <input type="submit" class="btn" value="Dimming" name="dimming">
-            <input type="submit" class="btn" value="Color" name="color">
-          </form>
-        </div>
-
-    <div>
-        <img src="/mkl-yeetable/assets/images/locationsUpperCampusMap.png" alt="Upper Campus Locations" border="0" usemap="#Map" />
+<div class="ui container">
+  <div class="wrap">
+    <div class="ui search">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search restaurants...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
     </div>
+  </div>
+</div>
 
-    <div class="row">
-        <div class="column left" style="background-color: powderblue;">
-            <h2>Headquarters:</h2>
-            <p>POST 318-B</p>
-        </div>
+<div>
+  <form method="GET">
+    <input type="image" id="lecrepecafe" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe"
+           name="lecrepecafe" class="restBtn">
+    <input type="image" id="starbucks" src="{% static '/images/starbucks.png' %}" value="starbucks" name="starbucks"
+           class="restBtn">
+    <input type="image" id="jamba" src="{% static '/images/jamba.png' %}" value="jamba" name="jamba" class="restBtn">
+    <input type="image" id="panda" src="{% static '/images/panda.png' %}" value="panda" name="panda" class="restBtn">
+    <BR>
+    <input type="submit" class="btn" value="Connect" name="connect"/>
+    <input type="submit" class="btn" value="Turn On" name="turnon">
+    <input type="submit" class="btn" value="Turn Off" name="turnoff">
+    <input type="submit" class="btn" value="Dimming" name="dimming">
+    <input type="submit" class="btn" value="Color" name="color">
+  </form>
+</div>
 
-        <div class="column middle" style="background-color: powderblue;">
-            <h2>Github:</h2>
-            <p>github.com/teammkl</p>
-        </div>
-        <div class="column right" style="background-color: powderblue;">
-            <h2>Contact Us</h2>
-            <p>Email us @: yeetable@gmail.com</p>
-            <p>Contact us: 1-808-420-9325</p>
-        </div>
-    </div>
-    </body>
+<div>
+  <img src="{% static '/images/locationsUpperCampusMap.png' %}" alt="Upper Campus Locations" border="0" usemap="#Map" />
+  <img src="{% static '/images/locationsLowerCampusMap.png' %}" alt="Lower Campus Locations" border="0" usemap="#Map" />
+</div>
+
+<div class="row">
+  <div class="column left" style="background-color: powderblue;">
+    <h2>Headquarters:</h2>
+    <p>POST 318-B</p>
+  </div>
+
+  <div class="column middle" style="background-color: powderblue;">
+    <h2>Github:</h2>
+    <p>github.com/teammkl</p>
+  </div>
+  <div class="column right" style="background-color: powderblue;">
+    <h2>Contact Us</h2>
+    <p>Email us @: yeetable@gmail.com</p>
+    <p>Contact us: 1-808-420-9325</p>
+  </div>
+</div>
+</body>
 </html>
+
+<script>
+  const data = [
+    { name: "Da Spot", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Dunkin' Donuts", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Govinda's", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Holoholo Grill", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Hot Tacos", location: "Krauss Hall", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Kamitoku Ramen", location: "Center for Korean Studies", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "L&L Hawaiian Barbecue", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Lasoon", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Le Crêpe Café", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Panda Express", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Peace Cafe", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Punchbowl", location: "POST Building", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Sistah Truck", location: "Holmes Hall", hours: "Monday-Friday 10:00am - 2:00pm" },
+    {
+      name: "The Bean Counter",
+      location: "Shidler College of Business, 1st Floor",
+      hours: "Monday-Friday 10:00am - 2:00pm"
+    }
+  ];
+  // const content = [];
+  for (let i = 0; i < data.length; i++) {
+    data[i].myid = i;
+  }
+
+  $('.ui.search')
+      .search({
+        source: data,
+        searchFields: ['name'],
+        fields: {
+          title: 'name',
+        },
+        onSelect: function (result, response) {
+          console.log(result);
+          console.log(response);
+          console.log(result.myid);
+          location.href = "restaurantDirectory" + "?id=" + result.myid;
+          return true;
+        }
+      })
+  ;
+</script>

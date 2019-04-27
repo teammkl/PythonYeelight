@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Restaurant Directory</title>
+  <title>Restaurant Information</title>
   <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,27 +19,33 @@
   <div class="nav">
     <ul class="menu-bar">
       <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
-      <li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>
+      <!--<li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>-->
       <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
     </ul>
   </div>
 </div>
-<div>
-  <div class="content">
-    <div class="wrap">
-      <div class="ui search">
-        <div class="ui icon input">
-          <input class="prompt" type="text" placeholder="Search restaurants...">
-          <i class="search icon"></i>
-        </div>
-        <div class="results"></div>
+
+<div class="ui container">
+  <div class="ui centered raised card">
+    <a class="image" href="#">
+      <img src="{% static '/images/panda.png' %}">
+    </a>
+    <div class="content">
+      <a class="center aligned header" href="https://google.com">Restaurant Name</a>
+      <div class="meta">
+        <span class="right floated time">Hours</span>
+        <span class="category">Location</span>
       </div>
     </div>
-    <div>
-      <ol id="dynamic_list"></ol>
+    <div class="content">
+      <div class="description">
+        <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+        <p>Many people also have their own barometers for what makes a cute dog.</p>
+      </div>
     </div>
   </div>
 </div>
+
 
 <div class="row">
   <div class="column left" style="background-color: powderblue;">
@@ -62,36 +68,18 @@
 
 
 <script>
-  const content = [];
-  for (let i = 0; i < 25; i++) {
-      content[i] = { title: "Restaurant #" + i };
+  function getQueryVariable(variable) {
+    const query = window.location.search.substring(1);
+    const vars = query.split("&");
+    for (let i = 0; i < vars.length; i++) {
+      const pair = vars[i].split("=");
+      if (pair[0] == variable) {
+        return pair[1];
+      }
+    }
+    return (false);
   }
 
-  const db = openDatabase('users_restaurant', '1.0', 'users_restaurant db', 2 * 1024 * 1024);
-  // db.transaction(function (tx) {
-  //   return tx.executeSql('SELECT name from users_restaurant');
-  // });
-  // function addItem(i){
-  //   const ul = document.getElementById("dynamic_list");
-  //   const x = db.transaction(function (tx) {
-  //     return tx.executeSql('SELECT name from users_restaurant WHERE id=' + i);
-  //   });
-  //   const li = document.createElement("li");
-  //   li.setAttribute('id',x.id);
-  //   li.appendChild(document.createTextNode(x.name));
-  //   ul.appendChild(li);
-  // }
-  // for (let i = 0; i < 2; i++) {
-  //   content[i] = { title: addItem(i) };
-  // }
-  for (let i = 0; i < 2; i++) {
-    content[i] = { title: db };
-  }
-
-  $('.ui.search')
-      .search({
-        source: content
-      })
-  ;
+  console.log(getQueryVariable("id"));
 </script>
 

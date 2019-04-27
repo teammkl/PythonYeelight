@@ -1,0 +1,69 @@
+html {
+  height: 100%;
+  -webkit-background-size:cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background: white;  /* fallback for old browsers */
+  background-repeat: no-repeat;
+  background: -webkit-linear-gradient(#ffffff, #c1c1c1);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(#ffffff, #c1c1c1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#logo {
+  padding-top: 0px;
+  width: 400px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.restBtn{
+  width: 100px;
+  padding: 20px;
+}
+
+.nav .menu-bar {
+    background-color: powderblue;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-left: -20px;
+    margin-right: -20px;
+    box-shadow: none;
+    border: none;
+}
+
+.menu-bar li {
+    font-family: 'Julius Sans One', serif;
+    list-style-type: none;
+    display: inline-block;
+    padding: 20px;
+    font-size: 20px;
+    /*color: white*/
+}
+
+.menu-bar li:hover, .menu-bar li:active {
+  color: black;
+  background:rgba(0, 0, 0, 0.1);
+}
+
+/*.content{*/
+    /*margin: 10px auto 0px auto;*/
+    /*text-align: center;*/
+    /*width: 750px;*/
+    /*position: relative;*/
+    /*top: 15px;*/
+    /*margin-left: auto;*/
+/*}*/
+
+a {
+    text-decoration: none;
+}
+
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
