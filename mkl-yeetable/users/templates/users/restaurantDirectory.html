@@ -5,7 +5,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Restaurant Information</title>
+  <title>Restaurant Directory</title>
   <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -19,34 +19,59 @@
   <div class="nav">
     <ul class="menu-bar">
       <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
-      <!--<li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>-->
+      <li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>
       <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
     </ul>
   </div>
 </div>
 
-<div class="ui container">
-  <div class="ui centered raised card">
-    <a class="image" href="#">
-      <img src="{% static '/images/panda.png' %}">
-    </a>
-    <div class="content">
-      <a class="center aligned header" href="https://google.com">Restaurant Name</a>
-      <div class="meta">
-        <span class="right floated time">Hours</span>
-        <span class="category">Location</span>
+<div class="ui two column grid">
+  <div class="four wide column">
+    <div class="ui vertical fluid tabular menu">
+      <div class="item">
+        <div class="ui search">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search restaurants...">
+            <i class="search icon"></i>
+          </div>
+          <div class="results"></div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="ui center aligned container">
+          <button class="ui basic rounded teal button">
+            <a href="restaurantDirectory">Clear Filters</a>
+          </button>
+        </div>
+      </div>
+      <div class="item">
+        <h3 class="item ui header">Locations</h3>
+        <div id="locationsMenu" class="ui right aligned container">
+          <a href="restaurantDirectory?locationid=0" class="item">Center for Korean Studies</a>
+          <a href="restaurantDirectory?locationid=1" class="item">Holmes Hall</a>
+          <a href="restaurantDirectory?locationid=2" class="item">Krauss Hall</a>
+          <a href="restaurantDirectory?locationid=3" class="item">Paradise Palms Café</a>
+          <a href="restaurantDirectory?locationid=4" class="item">POST Building</a>
+          <a href="restaurantDirectory?locationid=5" class="item">Shidler College of Business</a>
+          <a href="restaurantDirectory?locationid=6" class="item">Sustainability Courtyard</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3 class="item ui header">Restaurants</h3>
+        <div id="restaurantNameMenu" class="ui right aligned container"></div>
       </div>
     </div>
-    <div class="content">
-      <div class="description">
-        <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for
-          their tiny stature, and even others for their massive size.</p>
-        <p>Many people also have their own barometers for what makes a cute dog.</p>
+  </div>
+  <div class="twelve wide column">
+    <div class="ui fluid container">
+      <div class="ui three centered doubling cards" id="cards">
       </div>
     </div>
   </div>
 </div>
+</div>
 
+<!--<div class="ui hidden divider"></div>-->
 
 <div class="row">
   <div class="column left" style="background-color: powderblue;">
@@ -79,23 +104,111 @@
     "Sustainability Courtyard"
   ];
   const data = [
-    { name: "Da Spot", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Dunkin' Donuts", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Govinda's", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Holoholo Grill", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Hot Tacos", location: "Krauss Hall", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Kamitoku Ramen", location: "Center for Korean Studies", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "L&L Hawaiian Barbecue", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Lasoon", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Le Crêpe Café", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Panda Express", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Peace Cafe", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Punchbowl", location: "POST Building", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Sistah Truck", location: "Holmes Hall", hours: "Monday-Friday 10:00am - 2:00pm" },
+    {
+      name: "Da Spot",
+      location: "Sustainability Courtyard",
+      hours: "Monday-Friday 10:00am - 2:00pm",
+      description: "Da Spot Health Foods & Juices offers diverse, healthy and affordable cuisine with a unique take on tasty dishes from around the world. Da Spot specializes in Mediterranean and North African food with vegan and specialty meat options that can be certified halal or kosher. Offering imaginative cuisine in exotic styles of Egyptian, Greek, French, Italian, Indian, Thai, Malaysian, Ethiopian, American, Hawaiian, Japanese, Chinese, Korean, Pacific Rim and fusion cooking.\n" +
+          "\n" +
+          "Da Spot's menu also features over 15 combinations of different fruit smoothies.",
+      website: "https://daspot.net/"
+    },
+    {
+      name: "Dunkin' Donuts",
+      location: "Paradise Palms Café",
+      hours: "Monday-Friday 7:00 am - 5:00 pm",
+      description: "Dunkin’ Donuts in Paradise Palms Cafe will keep Hawaii running with high-quality beverage offerings–including freshly-brewed Hot and Iced Coffees–paired perfectly with delicious donuts, bakery good, sandwiches and more."
+    },
+    {
+      name: "Govinda's",
+      location: "Sustainability Courtyard",
+      hours: "Monday-Friday 10:00am - 2:00pm",
+      description: "Want a sustainable selection for lunch? Try Govinda's, which offers a 100% pure vegetarian menu, with items low in cholesterol and mostly organic. They strive to bring you a healthy and delicious meal at the best possible price.\n" +
+          "\n" +
+          "Govinda's uses top quality produce and only the finest quality sea salt. All of the rice, grains, beans, tofu, sugar and flour are certified organic. Their menu never contains any meat or meat by-products, fish, eggs, MSG, iodized salt, preservatives, hydrogenated oils, or artificial colors or flavors.",
+      website: "https://www.dunkindonuts.com/en"
+    },
+    {
+      name: "Holoholo Grill",
+      location: "Paradise Palms Café",
+      hours: "Monday-Friday 8:00am - 3:00pm",
+      description: "Holoholo Grill features healthy, locally grown salads, sandwiches, and grab-and-go items at affordable prices. They are committed to using the freshest island-grown ingredients sourced directly from farmers and fishermen. Grab-and-go, breakfast items, or catering for any sized group are also available!",
+      website: "https://holohologrill.com/"
+    },
+    {
+      name: "Hot Tacos",
+      location: "Krauss Hall",
+      hours: "Monday-Friday 10:00am - 2:00pm",
+      description: "Hot Tacos offers authentic Mexican food, prepped and cooked daily from scratch offering tacos, burritos, and quesadillas with meat options like steak, chicken, marinated pork, and shredded beef. They offer a la carte options or lunch plates that include beans and Spanish rice and other add on options like Chili Rellenos and Tamales.",
+      website: "https://www.yelp.com/biz/hot-tacos-honolulu-3"
+    },
+    {
+      name: "Kamitoku Ramen",
+      location: "Center for Korean Studies",
+      hours: "Monday-Friday 10:00am - 2:00pm",
+      description: "Kamitoku Ramen specializes in a Tottori-style beef bone ramen.",
+      website: "https://www.yelp.com/biz/kamitoku-ramen-uh-manoa-honolulu"
+    },
+    {
+      name: "L&L Hawaiian Barbecue",
+      location: "Paradise Palms Café",
+      hours: "Monday-Friday 7:00am - 4:30pm",
+      description: "Delicious local and Asian-American fusion cuisine served in big portions at reasonable prices! Try delicious L&L favorites like the Hawaiian Barbecue beef, chicken, or short ribs! Enjoy L&L's famous fried chicken katsu, the best in town! Grab-and-go, breakfast items and party packs for groups also available.",
+      website: "https://www.hawaiianbarbecue.com/"
+    },
+    {
+      name: "Lasoon",
+      location: "Paradise Palms Café",
+      hours: "Monday-Friday 10:30am - 4:00pm",
+      description: "Lasoon offers something for everyone with their signature exotic South Indian and Malaysian cuisine. Daily specials include chicken curry, lamb masala, garlic shrimp, seafood curry, spinach tofu, spicy eggplant, curried potatoes, coconut cabbage & over 10 different vegetarian entrees to choose from. Spiciness ranges from mild to very hot.",
+      website: "https://www.yelp.com/biz/lasoon-honolulu"
+    },
+    {
+      name: "Le Crêpe Café",
+      location: "Paradise Palms Café",
+      hours: "Monday-Friday 8:00am - 5:00pm",
+      description: "Le Crêpe Café makes traditional French crêpes, cooked to order in front of customers. They specialize in a flavorsome menu of sweet and savory crêpes and use fresh ingredients, organic when possible. Their utensils are even bio-compostable. Enjoy a crêpe any time of day, as a breakfast, snack, main course, or dessert - close your eyes and you're in Paris!\n" +
+          "\n" +
+          "Whether you’re needing a break from the law books or a pick-me-up as you’re headed to or off campus, you’ll also appreciate Le Crêpe Café’s French Roast and espresso drinks. ",
+      website: "https://www.lecrepecafe.com/"
+    },
+    {
+      name: "Panda Express",
+      location: "Paradise Palms Café",
+      hours: "Monday - Friday 10:30am - 4:30pm",
+      description: "Panda Express serves gourmet Chinese food made with only the freshest ingredients. Famous for its Orange Chicken, they also offer a number of Wok Smart entrées that contain less than 250 calories per serving, such as Shanghai Angus Steak, Kung Pao Chicken, and Broccoli Beef. Other favorites include Beijing Beef, Sweetfire Chicken Breast, and Honey Walnut Shrimp.\n" +
+          "\n" +
+          "Panda Express’ offerings can be enjoyed in Panda Bowls, or two and three item plates. Perfect for lunch, dinner or as a pick-me-up snack between classes.",
+      website: "https://www.pandaexpress.com/"
+    },
+    {
+      name: "Peace Cafe",
+      location: "Sustainability Courtyard",
+      hours: "Monday-Friday 10:00am - 2:00pm",
+      description: "All of their homestyle recipes, including their Green Garden Burger patties and sauces, are original. Green Garden's food concept is to offer plant-based, all-vegan, organic, natural, non-GMO, and healthy meals with no onion, garlic or other additives, therefore to preserve the original, clean and pure flavors of their food. They have gluten-free offerings daily and their 100% plant-based organic food is fresh, wholesome and delicious.",
+      website: "https://www.peacecafehawaii.com/"
+    },
+    {
+      name: "Punchbowl Cafe",
+      location: "POST Building",
+      hours: "Monday-Friday 7:00am - 9:00pm",
+      description: "Punchbowl Coffee is a new brand created to promote and sell coffee from the Ka’u region on the big island. \n" +
+          "We work directly with several growers and our goal is to assist them to grow their business while maintaining control of their quality and distribution.",
+      website: "https://www.yelp.com/biz/punchbowl-cafe-honolulu-3"
+    },
+    {
+      name: "Sistah Truck",
+      location: "Holmes Hall",
+      hours: "Monday-Friday 10:00am - 2:00pm",
+      description: "Sistah Truck serves Korean-inspired local cuisine. Daily menu plate lunches include loco moco, chicken katsu, and Korean-style shoyu chicken. They also serve grab-and-go dishes like bibimbap, gyoza and kimchi bowls. Vegetarian options are available.",
+      website: "https://www.yelp.com/biz/sistah-honolulu-2"
+    },
     {
       name: "The Bean Counter",
       location: "Shidler College of Business, 1st Floor",
-      hours: "Monday-Friday 10:00am - 2:00pm"
+      hours: "Monday-Friday 7:30am - 6:00pm",
+      description: "The Bean Counter serves up brewed coffee from the Hawaiian Islands and fulfills your caffeinated desires with a full service espresso bar. Feed your growling stomach with a dizzying array of bagels with homemade spreads, or chow down with our savory wraps, healthy salads and sweet treats.",
+      website: "https://www.yelp.com/biz/the-bean-counter-honolulu"
     }
   ];
   for (let i = 0; i < data.length; i++) {
@@ -105,7 +218,26 @@
         data[i].locationid = j;
       }
     }
+    createMenuItem(data[i]);
   }
+
+  $('.ui.search')
+      .search({
+        source: data,
+        searchFields: ['name'],
+        fields: {
+          title: 'name',
+          description: '',
+        },
+        onSelect: function (result, response) {
+          console.log(result);
+          console.log(response);
+          console.log(result.myid);
+          location.href = "restaurantDirectory" + "?id=" + result.myid;
+          return true;
+        }
+      })
+  ;
 
   function getQueryVariable(variable) {
     const query = window.location.search.substring(1);
@@ -119,27 +251,65 @@
     return (false);
   }
 
-  function createCard(restaurantObj) {
-
+  function createMenuItem(restaurantObj) {
+    $('#restaurantNameMenu')
+        .append(
+            $('<a/>').attr("href", "restaurantDirectory?id=" + restaurantObj.myid)
+                .addClass("item").text(restaurantObj.name));
   }
 
-  function displayRestaurants() {
-    const id = getQueryVariable("id");
-    if (id) {
-      createCard(data[id]);
-      console.log(data[id]);
-    } else {
-      const locationid = getQueryVariable("locationid");
+  function createCard(restaurantObj) {
+    // console.log(document.getElementById('cards'));
+    // console.log(restaurantObj);
+    let imageStr = "{% static '/images/panda.png' %}";
+    imageStr = imageStr.replace("panda", restaurantObj.myid);
+    let imageStr2 = "{% static '/images/panda.jpg' %}";
+    imageStr2 = imageStr2.replace("panda", restaurantObj.myid + "hidden");
+    $('#cards')
+        .append(
+            $('<div/>').attr("id", "restaurant" + restaurantObj.myid).addClass("ui centered raised card")
+                .append($("<div/>").addClass("ui slide masked reveal medium image")
+                    .append($("<img/>").attr("src", imageStr).addClass("visible content"))
+                    .append($("<img/>").attr("src", imageStr2).addClass("hidden content")))
+                .append(
+                    $('<div/>').addClass("content")
+                        .append($("<a/>").attr("href", restaurantObj.website)
+                            .addClass("center aligned header").text(restaurantObj.name))
+                ).append(
+                $('<div/>').addClass("content")
+                    .append($("<div/>")
+                        .append($("<div/>").addClass("center aligned ui sub header").text(restaurantObj.location))
+                        .append($("<div/>").addClass("center aligned ui sub header").text(restaurantObj.hours))
+                    )
+            ).append(
+                $('<div/>').addClass("content")
+                    .append($("<div/>").addClass("description")
+                        .append($("<p/>").text(restaurantObj.description))
+                    )
+            )
+        );
+  }
+
+  const id = getQueryVariable("id");
+  const locationid = getQueryVariable("locationid");
+  console.log(id, locationid);
+  if (id) {
+    createCard(data[id]);
+    console.log(data[id]);
+  } else
+    if (locationid) {
       for (let i = 0; i < data.length; i++) {
         if (data[i].locationid == locationid) {
           createCard(data[i]);
           console.log(data[i]);
         }
       }
+    } else {
+      for (let i = 0; i < data.length; i++) {
+        createCard(data[i]);
+        console.log(data[i]);
+      }
     }
-  }
-
-  displayRestaurants();
 
 </script>
 

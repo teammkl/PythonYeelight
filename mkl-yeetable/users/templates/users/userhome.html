@@ -19,23 +19,54 @@
   <div class="nav">
     <ul class="menu-bar">
       <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
-      <!--<li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>-->
+      <li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>
       <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
     </ul>
   </div>
 </div>
 
-<div class="ui container">
-  <div class="wrap">
-    <div class="ui search">
-      <div class="ui icon input">
-        <input class="prompt" type="text" placeholder="Search restaurants...">
-        <i class="search icon"></i>
+
+<div class="ui two column grid">
+  <div class="four wide column">
+    <div class="ui vertical fluid tabular menu">
+      <div class="item">
+        <div class="ui search">
+          <div class="ui icon input">
+            <input class="prompt" type="text" placeholder="Search restaurants...">
+            <i class="search icon"></i>
+          </div>
+          <div class="results"></div>
+        </div>
       </div>
-      <div class="results"></div>
+      <div class="item">
+        <h3 class="item ui header">Locations</h3>
+        <div id="locationsMenu" class="ui right aligned container">
+          <a href="restaurantDirectory?locationid=0" class="item">Center for Korean Studies</a>
+          <a href="restaurantDirectory?locationid=1" class="item">Holmes Hall</a>
+          <a href="restaurantDirectory?locationid=2" class="item">Krauss Hall</a>
+          <a href="restaurantDirectory?locationid=3" class="item">Paradise Palms Café</a>
+          <a href="restaurantDirectory?locationid=4" class="item">POST Building</a>
+          <a href="restaurantDirectory?locationid=5" class="item">Shidler College of Business</a>
+          <a href="restaurantDirectory?locationid=6" class="item">Sustainability Courtyard</a>
+        </div>
+      </div>
+      <div class="item">
+        <h3 class="item ui header">Restaurants</h3>
+        <div id="restaurantNameMenu" class="ui right aligned container"></div>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="ui center aligned fluid container">
+      <img src="{% static '/images/locationsUpperCampusMap.png' %}" alt="Upper Campus Locations" border="0"
+           usemap="#Map"/>
+      <img src="{% static '/images/locationsLowerCampusMap.png' %}" alt="Lower Campus Locations" border="0"
+           usemap="#Map"/>
     </div>
   </div>
 </div>
+</div>
+
 
 <div>
   <form method="GET">
@@ -52,24 +83,6 @@
     <input type="submit" class="btn" value="Dimming" name="dimming">
     <input type="submit" class="btn" value="Color" name="color">
   </form>
-</div>
-
-<div>
-  <img src="{% static '/images/locationsUpperCampusMap.png' %}" alt="Upper Campus Locations" border="0" usemap="#Map"/>
-  <img src="{% static '/images/locationsLowerCampusMap.png' %}" alt="Lower Campus Locations" border="0" usemap="#Map"/>
-</div>
-
-<div class="ui message">
-  <div class="header">UH Manoa Restaurant Locations</div>
-  <ul class="list">
-    <li><a href="restaurantDirectory?locationid=0">Center for Korean Studies</a></li>
-    <li><a href="restaurantDirectory?locationid=1">Holmes Hall</a></li>
-    <li><a href="restaurantDirectory?locationid=2">Krauss Hall</a></li>
-    <li><a href="restaurantDirectory?locationid=3">Paradise Palms Café</a></li>
-    <li><a href="restaurantDirectory?locationid=4">POST Building</a></li>
-    <li><a href="restaurantDirectory?locationid=5">Shidler College of Business, 1st Floor</a></li>
-    <li><a href="restaurantDirectory?locationid=6">Sustainability Courtyard</a></li>
-  </ul>
 </div>
 
 <div class="row">
@@ -129,6 +142,14 @@
         data[i].locationid = j;
       }
     }
+    createMenuItem(data[i]);
+  }
+
+  function createMenuItem(restaurantObj) {
+    $('#restaurantNameMenu')
+        .append(
+            $('<a/>').attr("href", "restaurantDirectory?id=" + restaurantObj.myid)
+                .addClass("item").text(restaurantObj.name));
   }
 
   $('.ui.search')
