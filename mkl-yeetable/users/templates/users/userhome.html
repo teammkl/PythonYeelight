@@ -55,8 +55,21 @@
 </div>
 
 <div>
-  <img src="{% static '/images/locationsUpperCampusMap.png' %}" alt="Upper Campus Locations" border="0" usemap="#Map" />
-  <img src="{% static '/images/locationsLowerCampusMap.png' %}" alt="Lower Campus Locations" border="0" usemap="#Map" />
+  <img src="{% static '/images/locationsUpperCampusMap.png' %}" alt="Upper Campus Locations" border="0" usemap="#Map"/>
+  <img src="{% static '/images/locationsLowerCampusMap.png' %}" alt="Lower Campus Locations" border="0" usemap="#Map"/>
+</div>
+
+<div class="ui message">
+  <div class="header">UH Manoa Restaurant Locations</div>
+  <ul class="list">
+    <li><a href="restaurantDirectory?locationid=0">Center for Korean Studies</a></li>
+    <li><a href="restaurantDirectory?locationid=1">Holmes Hall</a></li>
+    <li><a href="restaurantDirectory?locationid=2">Krauss Hall</a></li>
+    <li><a href="restaurantDirectory?locationid=3">Paradise Palms Café</a></li>
+    <li><a href="restaurantDirectory?locationid=4">POST Building</a></li>
+    <li><a href="restaurantDirectory?locationid=5">Shidler College of Business, 1st Floor</a></li>
+    <li><a href="restaurantDirectory?locationid=6">Sustainability Courtyard</a></li>
+  </ul>
 </div>
 
 <div class="row">
@@ -79,6 +92,16 @@
 </html>
 
 <script>
+  const locationList = [
+    "Center for Korean Studies",
+    "Holmes Hall",
+    "Krauss Hall",
+    "Paradise Palms Café",
+    "POST Building",
+    "Shidler College of Business, 1st Floor",
+    "Sustainability Courtyard"
+  ];
+
   const data = [
     { name: "Da Spot", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
     { name: "Dunkin' Donuts", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
@@ -99,9 +122,13 @@
       hours: "Monday-Friday 10:00am - 2:00pm"
     }
   ];
-  // const content = [];
   for (let i = 0; i < data.length; i++) {
     data[i].myid = i;
+    for (let j = 0; j < locationList.length; j++) {
+      if (data[i].location == locationList[j]) {
+        data[i].locationid = j;
+      }
+    }
   }
 
   $('.ui.search')

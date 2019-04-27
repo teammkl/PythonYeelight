@@ -39,7 +39,8 @@
     </div>
     <div class="content">
       <div class="description">
-        <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size.</p>
+        <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for
+          their tiny stature, and even others for their massive size.</p>
         <p>Many people also have their own barometers for what makes a cute dog.</p>
       </div>
     </div>
@@ -68,6 +69,44 @@
 
 
 <script>
+  const locationList = [
+    "Center for Korean Studies",
+    "Holmes Hall",
+    "Krauss Hall",
+    "Paradise Palms Café",
+    "POST Building",
+    "Shidler College of Business, 1st Floor",
+    "Sustainability Courtyard"
+  ];
+  const data = [
+    { name: "Da Spot", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Dunkin' Donuts", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Govinda's", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Holoholo Grill", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Hot Tacos", location: "Krauss Hall", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Kamitoku Ramen", location: "Center for Korean Studies", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "L&L Hawaiian Barbecue", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Lasoon", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Le Crêpe Café", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Panda Express", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Peace Cafe", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Punchbowl", location: "POST Building", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Sistah Truck", location: "Holmes Hall", hours: "Monday-Friday 10:00am - 2:00pm" },
+    {
+      name: "The Bean Counter",
+      location: "Shidler College of Business, 1st Floor",
+      hours: "Monday-Friday 10:00am - 2:00pm"
+    }
+  ];
+  for (let i = 0; i < data.length; i++) {
+    data[i].myid = i;
+    for (let j = 0; j < locationList.length; j++) {
+      if (data[i].location == locationList[j]) {
+        data[i].locationid = j;
+      }
+    }
+  }
+
   function getQueryVariable(variable) {
     const query = window.location.search.substring(1);
     const vars = query.split("&");
@@ -80,6 +119,27 @@
     return (false);
   }
 
-  console.log(getQueryVariable("id"));
+  function createCard(restaurantObj) {
+
+  }
+
+  function displayRestaurants() {
+    const id = getQueryVariable("id");
+    if (id) {
+      createCard(data[id]);
+      console.log(data[id]);
+    } else {
+      const locationid = getQueryVariable("locationid");
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].locationid == locationid) {
+          createCard(data[i]);
+          console.log(data[i]);
+        }
+      }
+    }
+  }
+
+  displayRestaurants();
+
 </script>
 
