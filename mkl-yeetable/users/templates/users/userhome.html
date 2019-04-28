@@ -14,30 +14,34 @@
   <link rel="stylesheet" href="{% static '/css/userhome2.css' %}">
 </head>
 <body>
-<img src="{% static '/images/logo.png' %}" id="logo"/>
-<div class="header">
-  <div class="nav">
-    <ul class="menu-bar">
-      <li><a href="{% url 'users:userhome' %}">Home</i></a></li>
-      <li><a href="{% url 'users:restaurantDirectory' %}">Restaurant Directory</i></a></li>
-      <li><a href="{% url 'users:login' %}">Sign Out</i></a></li>
-    </ul>
+<a href="{% url 'users:userhome' %}">
+  <img src="{% static '/images/logo.png' %}" id="logo"/>
+</a>
+
+<div id="navBar" class="ui menu inverted four item">
+  <a class="item" href="{% url 'users:userhome' %}"
+     style="font-family: 'Julius Sans One', serif; padding: 20px; font-size: 20px;"
+  >Home</a>
+  <a class="item" href="{% url 'users:restaurantDirectory' %}"
+     style="font-family: 'Julius Sans One', serif; padding: 20px; font-size: 20px;"
+  >Restaurant Directory</a>
+  <a class="item" href="{% url 'users:login' %}"
+     style="font-family: 'Julius Sans One', serif; padding: 20px; font-size: 20px;"
+  >Sign Out</a>
+  <div class="item">
+    <div class="ui search">
+      <div class="ui icon input">
+        <input class="prompt" type="text" placeholder="Search restaurants...">
+        <i class="search icon"></i>
+      </div>
+      <div class="results"></div>
+    </div>
   </div>
 </div>
 
-
-<div class="ui two column grid">
+<div id="leftMenu" class="ui two column grid">
   <div class="four wide column">
     <div class="ui vertical fluid tabular menu">
-      <div class="item">
-        <div class="ui search">
-          <div class="ui icon input">
-            <input class="prompt" type="text" placeholder="Search restaurants...">
-            <i class="search icon"></i>
-          </div>
-          <div class="results"></div>
-        </div>
-      </div>
       <div class="item">
         <h3 class="item ui header">Locations</h3>
         <div id="locationsMenu" class="ui right aligned container">
@@ -68,7 +72,7 @@
 </div>
 
 
-<div>
+<!--<div>
   <form method="GET">
     <input type="image" id="lecrepecafe" src="{% static '/images/lecrepecafe.png' %}" value="lecrepecafe"
            name="lecrepecafe" class="restBtn">
@@ -83,22 +87,32 @@
     <input type="submit" class="btn" value="Dimming" name="dimming">
     <input type="submit" class="btn" value="Color" name="color">
   </form>
-</div>
+</div>-->
 
-<div class="row">
-  <div class="column left" style="background-color: powderblue;">
-    <h2>Headquarters:</h2>
-    <p>POST 318-B</p>
-  </div>
-
-  <div class="column middle" style="background-color: powderblue;">
-    <h2>Github:</h2>
-    <p>github.com/teammkl</p>
-  </div>
-  <div class="column right" style="background-color: powderblue;">
-    <h2>Contact Us</h2>
-    <p>Email us @: yeetable@gmail.com</p>
-    <p>Contact us: 1-808-420-9325</p>
+<div id="footer" class="footer-background" style="background-color: #292929; color: white;">
+  <div class="ui three column grid container">
+    <div class="column">
+      <h3>HEADQUARTERS</h3>
+      <hr/>
+      <div class="ui list">
+        <div class="item">POST 318-B</div>
+      </div>
+    </div>
+    <div class="column">
+      <h3>GITHUB</h3>
+      <hr/>
+      <div class="ui list">
+        <div class="item"><a href="https://github.com/teammkl" style="color: white;">github.com/teammkl</a></div>
+      </div>
+    </div>
+    <div class="column">
+      <h3>CONTACT US</h3>
+      <hr/>
+      <div class="ui list">
+        <div class="item">Email: yeetable@gmail.com</div>
+        <div class="item">Phone: 1-808-420-9325</div>
+      </div>
+    </div>
   </div>
 </div>
 </body>
@@ -127,7 +141,7 @@
     { name: "Le Crêpe Café", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
     { name: "Panda Express", location: "Paradise Palms Café", hours: "Monday-Friday 10:00am - 2:00pm" },
     { name: "Peace Cafe", location: "Sustainability Courtyard", hours: "Monday-Friday 10:00am - 2:00pm" },
-    { name: "Punchbowl", location: "POST Building", hours: "Monday-Friday 10:00am - 2:00pm" },
+    { name: "Punchbowl Cafe", location: "POST Building", hours: "Monday-Friday 10:00am - 2:00pm" },
     { name: "Sistah Truck", location: "Holmes Hall", hours: "Monday-Friday 10:00am - 2:00pm" },
     {
       name: "The Bean Counter",

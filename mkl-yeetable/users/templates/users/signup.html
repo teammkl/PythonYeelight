@@ -1,77 +1,104 @@
-{% load static from staticfiles %}
+<!--{% load static from staticfiles %}-->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <meta charset="utf-8">
-    <title>MKL YEETABLE</title>
-    <link rel="stylesheet" href="{% static '/css/signup.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>MKL YEETABLE</title>
+  <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
+  <link rel="shortcut icon" href="">
+  <link rel="stylesheet" href="{% static '/css/signup.css' %}">
 </head>
 <body>
-    <img src="{% static '/images/logo.png' width=100 %}" id="logo"/>
-    <div class="form">
-        <h3>CREATE ACCOUNT</h3>
-        <form action="{% url 'users:signup' %}" method="post">
-            {% csrf_token %}
-            {{ form }}
-            <input type="submit"></input>
-        </form>
-    </div>
+
+<img src="{% static '/images/logo.png' %}" id="logo"/>
+
+<div class="form"
+     style="
+     background: -webkit-linear-gradient(#ffffff, #c1c1c1);
+     background: linear-gradient(#ffffff, #c1c1c1);
+">
+  <h3>CREATE ACCOUNT</h3>
+  <form action="{% url 'users:signup' %}" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+    <a href="login"><h5 class="ui header right aligned" style="font-weight: normal">
+      Already have an account? Click to Sign In</h5></a>
+  </form>
 </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
 
-    <div class="row">
-        <div class="column left" style="background-color: powderblue;">
-            <h2>Headquarters:</h2>
-            <p>POST 318-B</p>
-        </div>
-
-        <div class="column middle" style="background-color: powderblue;">
-            <h2>Github:</h2>
-            <p>github.com/teammkl</p>
-        </div>
-        <div class="column right" style="background-color: powderblue;">
-            <h2>Contact Us</h2>
-            <p>Email us @: yeetable@gmail.com</p>
-            <p>Contact us: 1-808-420-9325</p>
-        </div>
+<div id="footer" class="footer-background" style="background-color: #292929; color: white;">
+  <div class="ui three column grid container">
+    <div class="column">
+      <h4>HEADQUARTERS</h4>
+      <hr/>
+      <div class="ui list">
+        <div class="item">POST 318-B</div>
+      </div>
     </div>
+    <div class="column">
+      <h4>GITHUB</h4>
+      <hr/>
+      <div class="ui list">
+        <div class="item"><a href="https://github.com/teammkl" style="color: white;">github.com/teammkl</a></div>
+      </div>
+    </div>
+    <div class="column">
+      <h4>CONTACT US</h4>
+      <hr/>
+      <div class="ui list">
+        <div class="item">Email: yeetable@gmail.com</div>
+        <div class="item">Phone: 1-808-420-9325</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
