@@ -19,6 +19,7 @@
 </a>
 
 <div id="navBar" class="ui menu inverted four item">
+  <!--<div id="coordinates" class="item">0</div>-->
   <a class="item" href="{% url 'users:userhome' %}"
      style="font-family: 'Julius Sans One', serif; padding: 20px; font-size: 20px;"
   >Home</a>
@@ -63,9 +64,62 @@
   <div class="column">
     <div class="ui center aligned fluid container">
       <img src="{% static '/images/locationsUpperCampusMap.png' %}" alt="Upper Campus Locations" border="0"
-           usemap="#Map"/>
+           usemap="#upperMap"/>
+      <map name="upperMap">
+        <area shape="rect" coords="520,290,560,340" onmouseover="mouseOver(0)" onmouseout="mouseOut(0)"
+              alt="Center for Korean Studies" href="restaurantDirectory?locationid=0">
+        <area shape="rect" coords="160,495,200,545" onmouseover="mouseOver(1)" onmouseout="mouseOut(1)"
+              alt="Holmes Hall" href="restaurantDirectory?locationid=1">
+        <area shape="rect" coords="80,325,120,375" onmouseover="mouseOver(2)" onmouseout="mouseOut(2)"
+              alt="Krauss Hall" href="restaurantDirectory?locationid=2">
+        <area shape="rect" coords="395,275,430,325" onmouseover="mouseOver(3)" onmouseout="mouseOut(3)"
+              alt="Paradise Palms Café" href="restaurantDirectory?locationid=3">
+        <area shape="rect" coords="520,290,560,340" onmouseover="mouseOver(4)" onmouseout="mouseOut(4)"
+              alt="POST Building" href="restaurantDirectory?locationid=4">
+        <area shape="rect" coords="80,0,200,40" onmouseover="mouseOver(5)" onmouseout="mouseOut(5)"
+              alt="Shidler College of Business, 1st Floor" href="restaurantDirectory?locationid=5">
+        <area shape="rect" coords="130,345,185,415" onmouseover="mouseOver(6)" onmouseout="mouseOut(6)"
+              alt="Sustainability Courtyard" href="restaurantDirectory?locationid=6">
+      </map>
       <img src="{% static '/images/locationsLowerCampusMap.png' %}" alt="Lower Campus Locations" border="0"
            usemap="#Map"/>
+      <div id="mapLabels" class="ui left pointing black labels">
+        <div id="locationid0" class="ui left pointing label" style="font-weight: normal">
+          <h4>Center for Korean Studies</h4>
+          <p>Kamitoku Ramen</p>
+        </div>
+        <div id="locationid1" class="ui left pointing label" style="font-weight: normal">
+          <h4>Holmes Hall</h4>
+          <p>Sistah Truck</p>
+        </div>
+        <div id="locationid2" class="ui left pointing label" style="font-weight: normal">
+          <h4>Krauss Hall</h4>
+          <p>Hot Tacos</p>
+        </div>
+        <div id="locationid3" class="ui left pointing label" style="font-weight: normal">
+          <h4>Paradise Palms Café</h4>
+          <p>Dunkin' Donuts</p>
+          <p>Holoholo Grill</p>
+          <p>L&L Barbecue</p>
+          <p>Lasoon</p>
+          <p>Le Crêpe Café</p>
+          <p>Panda Express</p>
+        </div>
+        <div id="locationid4" class="ui left pointing label" style="font-weight: normal">
+          <h4>POST Building</h4>
+          <p>Hot Tacos</p>
+        </div>
+        <div id="locationid5" class="ui left pointing label" style="font-weight: normal">
+          <h4>Schidler College of Business</h4>
+          <p>The Bean Counter</p>
+        </div>
+        <div id="locationid6" class="ui left pointing label" style="font-weight: normal">
+          <h4>Sustainability Courtyard</h4>
+          <p>Da Spot</p>
+          <p>Govinda's</p>
+          <p>Peace Cafe</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -180,6 +234,40 @@
           location.href = "restaurantDirectory" + "?id=" + result.myid;
           return true;
         }
-      })
-  ;
+      });
+
+  $(function () {
+    $(document).mousemove(function (e) {
+      $('#coordinates').html('x: ' + e.pageX + ' y : ' + e.pageY);
+    });
+  })
+
+  function placeDiv(x_pos, y_pos, elementid) {
+    let d = document.getElementById(elementid);
+    d.style.position = "absolute";
+    d.style.left = x_pos + 'px';
+    d.style.top = y_pos + 'px';
+  }
+
+  function positionMapLabels() {
+    placeDiv(565, 260, 'locationid0');
+    placeDiv(205, 510, 'locationid1');
+    placeDiv(125, 335, 'locationid2');
+    placeDiv(440, 215, 'locationid3');
+    placeDiv(205, 510, 'locationid4');
+    placeDiv(135, 10, 'locationid5');
+    placeDiv(180, 350, 'locationid6');
+  }
+
+  positionMapLabels();
+
+  function mouseOver(locationid) {
+    console.log("locationid=" + locationid);
+    document.getElementById(locationid);
+  }
+
+  function mouseOut(locationid) {
+    console.log("locationid=" + locationid);
+    document.getElementById("locationid" + elementid);
+  }
 </script>
