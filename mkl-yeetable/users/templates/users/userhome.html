@@ -84,19 +84,19 @@
       <img src="{% static '/images/locationsLowerCampusMap.png' %}" alt="Lower Campus Locations" border="0"
            usemap="#Map"/>
       <div id="mapLabels" class="ui left pointing black labels">
-        <div id="locationid0" class="ui left pointing label" style="font-weight: normal">
+        <div id="locationid0" class="ui right pointing label" style="font-weight: normal; display: none">
           <h4>Center for Korean Studies</h4>
           <p>Kamitoku Ramen</p>
         </div>
-        <div id="locationid1" class="ui left pointing label" style="font-weight: normal">
+        <div id="locationid1" class="ui left pointing label" style="font-weight: normal; display: none">
           <h4>Holmes Hall</h4>
           <p>Sistah Truck</p>
         </div>
-        <div id="locationid2" class="ui left pointing label" style="font-weight: normal">
+        <div id="locationid2" class="ui left pointing label" style="font-weight: normal; display: none">
           <h4>Krauss Hall</h4>
           <p>Hot Tacos</p>
         </div>
-        <div id="locationid3" class="ui left pointing label" style="font-weight: normal">
+        <div id="locationid3" class="ui left pointing label" style="font-weight: normal; display: none">
           <h4>Paradise Palms Café</h4>
           <p>Dunkin' Donuts</p>
           <p>Holoholo Grill</p>
@@ -105,15 +105,15 @@
           <p>Le Crêpe Café</p>
           <p>Panda Express</p>
         </div>
-        <div id="locationid4" class="ui left pointing label" style="font-weight: normal">
+        <div id="locationid4" class="ui left pointing label" style="font-weight: normal; display: none">
           <h4>POST Building</h4>
           <p>Hot Tacos</p>
         </div>
-        <div id="locationid5" class="ui left pointing label" style="font-weight: normal">
+        <div id="locationid5" class="ui left pointing label" style="font-weight: normal; display: none">
           <h4>Schidler College of Business</h4>
           <p>The Bean Counter</p>
         </div>
-        <div id="locationid6" class="ui left pointing label" style="font-weight: normal">
+        <div id="locationid6" class="ui left pointing label" style="font-weight: normal; display: none">
           <h4>Sustainability Courtyard</h4>
           <p>Da Spot</p>
           <p>Govinda's</p>
@@ -124,7 +124,6 @@
   </div>
 </div>
 </div>
-
 
 <!--<div>
   <form method="GET">
@@ -169,6 +168,7 @@
     </div>
   </div>
 </div>
+
 </body>
 </html>
 
@@ -249,8 +249,17 @@
     d.style.top = y_pos + 'px';
   }
 
+  function mouseOver(locationid) {
+    document.getElementById("locationid" + locationid).style.display = "inline-block";
+  }
+
+  function mouseOut(locationid) {
+    document.getElementById("locationid" + locationid).style.display = "none";
+
+  }
+
   function positionMapLabels() {
-    placeDiv(565, 260, 'locationid0');
+    placeDiv(335, 300, 'locationid0');
     placeDiv(205, 510, 'locationid1');
     placeDiv(125, 335, 'locationid2');
     placeDiv(440, 215, 'locationid3');
@@ -260,14 +269,4 @@
   }
 
   positionMapLabels();
-
-  function mouseOver(locationid) {
-    console.log("locationid=" + locationid);
-    document.getElementById(locationid);
-  }
-
-  function mouseOut(locationid) {
-    console.log("locationid=" + locationid);
-    document.getElementById("locationid" + elementid);
-  }
 </script>

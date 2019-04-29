@@ -11,30 +11,39 @@
   <script type="text/javascript"
           src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js"></script>
   <link rel="shortcut icon" href="">
-  <link rel="stylesheet" href="{% static '/css/index.css' %}">
+  <link rel="stylesheet" href="{% static '/css/userhome.css' %}">
 </head>
 <body>
 
 <img src="{% static '/images/logo.png' %}" id="logo"/>
 
 <br>
-<h1>Welcome</h1>
+<h1 style="
+    font-family: 'Julius Sans One', serif;
+    color: black;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+">Welcome</h1>
 
 <br>
 <br>
 <br>
 
-<div id="navBar" class="ui fluid two column grid center aligned">
-  <form method="get" action="signup.html" class="item">
-    <a href="{% url 'users:signup' %}" class="ui basic black huge button">
-      <h3 style="font-family: 'Julius Sans One', serif">Sign Up</h3>
-    </a>
-  </form>
-  <form method="get" action="login.html" class="item">
-    <a href="{% url 'users:login' %}" class="ui basic black huge button">
-      <h3 style="font-family: 'Julius Sans One', serif">Sign In</h3>
-    </a>
-  </form>
+<div id="navBar" class="ui fluid container center aligned">
+  <div class="ui buttons">
+    <form method="get" action="signup.html" class="item" style="padding-right: 75px">
+      <a href="{% url 'users:signup' %}" class="ui basic black huge button">
+        <h3 style="font-family: 'Julius Sans One', serif">Sign Up</h3>
+      </a>
+    </form>
+    <div class="ui vertical hidden divider"></div>
+    <form method="get" action="login.html" class="item">
+      <a href="{% url 'users:login' %}" class="ui basic black huge button">
+        <h3 style="font-family: 'Julius Sans One', serif">Sign In</h3>
+      </a>
+    </form>
+  </div>
 </div>
 
 <div>
@@ -72,7 +81,6 @@
     </div>
   </div>
 </div>
-
 </body>
 </html>
 
