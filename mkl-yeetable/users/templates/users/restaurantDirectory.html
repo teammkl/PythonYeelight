@@ -288,7 +288,8 @@
                 .append($("<div/>").addClass("ui slide masked reveal medium image")
                     .append($("<img/>").attr("src", imageStr).addClass("visible content")
                         .attr("style", "height: 250px; overflow: hidden; object-fit:scale-down; position: relative"))
-                    .append($("<img/>").attr("src", imageStr2).addClass("hidden content")))
+                    .append($("<img/>").attr("src", imageStr2).addClass("hidden content")
+                        .attr("style", "height: 250px; overflow: hidden; object-fit: cover; position: relative")))
                 .append(
                     $('<div/>').addClass("content")
                         .append($("<a/>").attr("href", restaurantObj.website)
