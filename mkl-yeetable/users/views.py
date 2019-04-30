@@ -4,6 +4,7 @@ from yeelight import Bulb
 from yeelight import discover_bulbs
 from django.views.decorators.csrf import csrf_exempt
 
+
 # Create your views here.
 def signup_view(request):
     if request.method == 'POST':
@@ -14,7 +15,7 @@ def signup_view(request):
             return redirect('users:userhome')
     else:
         form = UserCreationForm()
-    return render(request, 'users/signup.html', { 'form': form })
+    return render(request, 'users/signup.html', {'form': form})
 
 
 # noinspection PyInterpreter
@@ -67,6 +68,7 @@ def user_homepage(request):
         print("NO REQUEST")
     return render(request, 'users/userhome.html')
 
+
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
@@ -75,7 +77,32 @@ def login_view(request):
             return redirect('users:userhome')
     else:
         form = AuthenticationForm()
-    return render(request, 'users/login.html', { 'form': form })
+    return render(request, 'users/login.html', {'form': form})
+
 
 def restaurant_directory(request):
+    try:
+        # test for specific restaurants
+        myid = request.GET['id']
+        print("id=" + myid)
+        if myid == '0':
+            # do stuff to the light bulb
+            print("Da Spot")
+        elif myid == '1':
+            # do stuff to the light bulb
+            print("Dunkin' Donuts")
+    except:
+        print(request.GET)
+    try:
+        # test for locations
+        locationid = request.GET['locationid']
+        print("locationid=" + locationid)
+        if locationid == '0':
+            # do stuff to the light bulb
+            print("Center for Korean Studies")
+        elif locationid == '1':
+            # do stuff to the light bulb
+            print("Holmes Hall")
+    except:
+        print(request.GET)
     return render(request, 'users/restaurantDirectory.html')
