@@ -21,7 +21,7 @@ def signup_view(request):
 # noinspection PyInterpreter
 @csrf_exempt
 def user_homepage(request):
-    bulb = Bulb("192.168.1.134")
+    bulb = Bulb("192.168.1.167")
     # noinspection PyInterpreter,PyInterpreter
     if request.GET.get('connect'):
         print(request.GET.get('connect'))
@@ -85,24 +85,125 @@ def restaurant_directory(request):
         # test for specific restaurants
         myid = request.GET['id']
         print("id=" + myid)
+        bulb = Bulb("192.168.1.167")
         if myid == '0':
             # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
             print("Da Spot")
         elif myid == '1':
             # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
             print("Dunkin' Donuts")
+        elif myid == '2':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Govindas")
+        elif myid == '3':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
+            print("Holoholo Grill")
+        elif myid == '4':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Hot Tacos")
+        elif myid == '5':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
+            print("Kamitoku Ramen")
+        elif myid == '6':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
+            print("LL BBQ")
+        elif myid == '7':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
+            print("Lasoon")
+        elif myid == '8':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
+            print("Le Crepe Cafe")
+        elif myid == '9':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
+            print("Panda Express")
+        elif myid == '10':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Peace Cafe")
+        elif myid == '11':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Punchbowl Cafe")
+        elif myid == '12':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Sistah Truck")
+        elif myid == '13':
+            # do stuff to the light bulb
+            print("Turning On")
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("The Bean Counter")
     except:
         print(request.GET)
     try:
         # test for locations
         locationid = request.GET['locationid']
         print("locationid=" + locationid)
+        bulb = Bulb("192.168.1.167")
         if locationid == '0':
-            # do stuff to the light bulb
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
             print("Center for Korean Studies")
         elif locationid == '1':
-            # do stuff to the light bulb
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
             print("Holmes Hall")
+        elif locationid == '2':
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Krauss Hall")
+        elif locationid == '3':
+            bulb.turn_on()
+            bulb.set_color_temp(6500)
+            print("Paradise Palms")
+        elif locationid == '4':
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("POST")
+        elif locationid == '5':
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Shidler College of Business")
+        elif locationid == '6':
+            bulb.turn_on()
+            bulb.set_color_temp(2700)
+            print("Sustainability Courtyard")
     except:
         print(request.GET)
     return render(request, 'users/restaurantDirectory.html')
